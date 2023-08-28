@@ -314,8 +314,8 @@ bool DaikinS21::parse_response(std::vector<uint8_t> rcode,
           this->fan = (DaikinFanMode) payload[3];
           return true;
         case '5':  // F5 -> G5 -- Swing state
-          this->swing_v = payload[0] & 1;
-          this->swing_h = payload[0] & 2;
+          this->swing_v = bytes_to_num(payload[0]) & 1;
+          this->swing_h = bytes_to_num(payload[0]) & 2;
           return true;
         case '9':  // F9 -> G9 -- Inside temperature
           this->temp_inside = temp_f9_byte_to_c10(&payload[0]);
