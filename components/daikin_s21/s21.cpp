@@ -384,7 +384,8 @@ void DaikinS21::update() {
 
 #ifdef S21_EXPERIMENTS
   ESP_LOGD(TAG, "** UNKNOWN QUERIES **");
-  auto experiments = {"F2", "F3", "F4", "F8", "F9", "F0", "FA", "FB", "FC",
+  std::vector<std::string> experiments =
+                      {"F2", "F3", "F4", "F8", "F9", "F0", "FA", "FB", "FC",
                        "FD", "FE", "FF", "FG", "FH", "FI", "FJ", "FK", "FL",
                        "FM", "FN", "FO", "FP", "FQ", "FR", "FS", "FT", "FU",
                        "FV", "FW", "FX", "FY", "FZ"};
